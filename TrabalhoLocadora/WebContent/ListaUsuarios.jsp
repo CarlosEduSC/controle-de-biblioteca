@@ -69,7 +69,10 @@
 					<th scope="col">Tipo de Usuario</th>
 					</tr>
 				</thead>
-				<% for (Usuario u : usuarios) {%>
+				<% 
+					for (Usuario u : usuarios) {
+					request.setAttribute("idUsuario", u.getId());	
+				%>
 				<tbody>
 					<tr>
 						<th scope="row"></th>
@@ -78,7 +81,7 @@
 						<td><%= u.getEmail() %></td>
 						<td><%= u.getTipo() %></td>
 						<td>
-	          				<a href="/deleta-livro">asdasd</a>
+	          				<a href="deleta-usuario?idUsuario=<%= u.getId()%>" value="idUsuario">Deletar</a>
 			  			</td>
 					</tr>
 				</tbody>
